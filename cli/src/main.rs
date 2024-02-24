@@ -15,10 +15,11 @@
 /// // Start the server with default configuration
 /// main();
 /// ```
+
+#[cfg_attr(debug_assertions, allow(dead_code, unused_imports))]
 use openssl;
 
 #[macro_use]
-use diesel;
 
 mod options;
 mod telemetry;
@@ -40,7 +41,7 @@ use std::str::FromStr;
 use std::sync::Arc;
 
 use library::adapter::repositories::postgres::question_db::QuestionDBRepository;
-use tracing::{error, info};
+use tracing::info;
 
 /// Simple REST server.
 #[derive(Parser, Debug)]
@@ -66,7 +67,7 @@ enum Commands {
 #[tokio::main]
 async fn main() {
     let args = Args::parse();
-    if args.version == true {
+    if args.version {
         println!(env!("APP_VERSION"));
         return;
     }

@@ -70,6 +70,9 @@ Hierarchical child config via env, separated by using `__`. Specify list values 
 
 Make sure to set these environment variables according to your needs before running the server.
 
+### Config Workflows
+- For Github flow CI, please set your docker hub secret `DOCKER_USERNAME`, `DOCKERHUB_TOKEN`
+
 ## Checklist
 
 ### Basic Functionalities

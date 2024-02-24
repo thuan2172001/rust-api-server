@@ -41,6 +41,6 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      - ./01-custom.toml:/user/01-custom.toml:r
+      - ./01-custom.toml:/user/01-custom.toml:ro
 volumes:
   postgres:
