@@ -37,6 +37,6 @@ adapter = { path = "../adapter" }
 rust-core = { path = "../core" }
 serde_json = "1.0"
 testcontainers = "0.15.0"
-testcontainers-modules = { version = "0.3.4", features = ["postgres"] }
+testcontainers-modules = { version = "0.3.5", features = ["postgres"] }
 rand = "0.8.4"
 diesel_migrations = "2.1.0"
