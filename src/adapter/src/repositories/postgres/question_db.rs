@@ -1,7 +1,8 @@
 use async_trait::async_trait;
 use deadpool_diesel::postgres::Pool;
-use diesel::{delete, insert_into, QueryDsl, RunQueryDsl, SelectableHelper};
-use diesel::{update, ExpressionMethods};
+use diesel::{
+    delete, insert_into, update, ExpressionMethods, QueryDsl, RunQueryDsl, SelectableHelper,
+};
 use diesel_migrations::{embed_migrations, EmbeddedMigrations};
 
 use rust_core::common::errors::Error;

@@ -6,7 +6,8 @@ use warp::{Filter, Rejection, Reply};
 use rust_core::ports::question::QuestionPort;
 
 use crate::controllers::question::{
-    add_question, delete_question, get_question, get_questions, update_question,
+    add_question, delete_question, get_question, get_question_answer_controller, get_questions,
+    update_question,
 };
 use crate::errors::return_error;
 
@@ -66,12 +67,20 @@ impl Router {
             .and(warp::path::end())
             .and_then(delete_question);
 
+        let get_question_answer = warp::get()
+            .and(warp::path("questions"))
+            .and(store_filter.clone())
+            .and(warp::path::param::<String>())
+            .and(warp::path("answer"))
+            .and_then(get_question_answer_controller);
+
         get_questions
             .with(cors)
             .or(get_question)
             .or(delete_question)
             .or(update_question)
             .or(add_question)
+            .or(get_question_answer)
             .with(warp::trace::request())
             .recover(return_error)
     }

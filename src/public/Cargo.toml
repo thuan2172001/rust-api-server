@@ -97,6 +97,9 @@ features = ["postgres"]
 version = "1.36.0"
 features = ["full"]
 
+[dependencies.grpc_client]
+path = "../grpc"
+
 [lib]
 path = "src/lib.rs"
 name = "cli"
