@@ -1,0 +1,49 @@
+bin = []
+bench = []
+test = []
+example = []
+
+[package]
+name = "grpc_client"
+edition = "2021"
+version = "0.0.1"
+autobins = true
+autoexamples = true
+autotests = true
+autobenches = true
+
+[dependencies.tonic]
+version = "0.11.0"
+
+[dependencies.once_cell]
+version = "1.8.0"
+
+[dependencies.prost]
+version = "0.12.3"
+
+[dependencies.prost-build]
+version = "0.12.3"
+
+[dependencies.protobuf-src]
+version = "1.1.0"
+
+[dependencies.rust_core]
+path = "../core"
+
+[build-dependencies]
+tonic-build = "0.11.0"
+
+
+[lib]
+path = "src/lib.rs"
+name = "grpc_client"
+test = true
+doctest = true
+bench = true
+doc = true
+plugin = false
+proc-macro = false
+harness = true
+edition = "2021"
+required-features = []
+crate-type = ["rlib"]
