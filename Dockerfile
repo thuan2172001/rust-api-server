@@ -3,6 +3,8 @@
 FROM clux/muslrust:stable AS chef
 USER root
 RUN cargo install cargo-chef
+RUN apt-get update && apt-get install -y protobuf-compiler libprotobuf-dev
+
 WORKDIR /app
 
 FROM clux/muslrust:stable AS bunyan
