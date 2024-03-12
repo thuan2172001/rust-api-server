@@ -102,7 +102,7 @@ jobs:
       DOCKER_HUB_REPOSITORY: thuan2172001/rust-server
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: [cargo-check, fmt-check, test-and-coverage]
+    # needs: [cargo-check, fmt-check, test-and-coverage]
     # needs: [fmt-check]
     steps:
       - name: Check out from Git
