@@ -62,7 +62,7 @@ warp = "0.3.6"
 path = "../adapter"
 
 [dependencies.clap]
-version = "4.4.7"
+version = "4.5.3"
 features = ["derive"]
 
 [dependencies.common]
