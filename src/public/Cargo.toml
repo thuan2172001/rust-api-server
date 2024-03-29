@@ -94,7 +94,7 @@ version = "0.3.5"
 features = ["postgres"]
 
 [dependencies.tokio]
-version = "1.36.0"
+version = "1.37.0"
 features = ["full"]
 
 [dependencies.thiserror]
